@@ -18,3 +18,12 @@ model Post {
 
     @@index([name])
 }
+
+model Page {
+    id          String        @id @default(uuid())
+    title       String        @unique
+    slug       String        @unique
+    content     String
+    createdAt   DateTime      @default(now())
+    updatedAt   DateTime      @updatedAt
+}
